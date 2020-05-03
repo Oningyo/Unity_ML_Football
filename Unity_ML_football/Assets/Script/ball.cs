@@ -1,25 +1,27 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ball : MonoBehaviour
+public class Ball : MonoBehaviour
 {
-    /// <summary>
-    /// 代表足球是否進入球門
-    /// </summary>
-    public static bool complate;
+    /// <summery>
+    /// 足球是否進入球門
+    /// </summery>
 
-    /// <summary>
-    /// 觸發開始次事件:碰到有勾選IS Trigger的物件會執行一次
-    /// </summary>
-    /// <param name="other">碰到的物件的碰撞資訊</param>
+    public static bool complete;
+
+    /// <summery>
+    /// 觸發開始事件 :碰到勾選 Is Trigger 物件會執行一次
+    /// </summery>
+    /// <parm name ="other">碰到的物件碰撞資訊</parm>
+
     private void OnTriggerEnter(Collider other)
     {
-        //如果物件碰觸到"球門感應區"
-        if(other.name== "球門感應區")
+        //如果 碰到物件  的  名稱  等於 "進球感應區"
+
+        if (other.name == "球門感應區")
         {
             //進入球門
-            complate = true;
-
+            complete = true;
         }
+
     }
 }
